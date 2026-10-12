@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather Search</title>
+<style>
+body {
+    background: linear-gradient(#b3e5fc, #e1f5fe);
+    text-align: center;
+    font-family: Arial;
+    padding: 80px 15px;
+}
+.card {
+    background: white;
+    padding: 30px;
+    max-width: 350px;
+    margin: auto;
+    border-radius: 25px;
+}
+button {
+    padding: 10px;
+    background: #0288d1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>🌤️ Weather App</h1>
+<input id="city" placeholder="Enter city">
+<button onclick="searchWeather()">Search</button>
+<p id="result">Search for a city to begin.</p>
+</div>
+<script>
+function searchWeather() {
+    let city = document.getElementById("city").value.trim();
+    document.getElementById("result").textContent =
+        city ? "You searched for " + city +
+        ". Connect a weather API to see live weather." :
+        "Please enter a city name.";
+}
+</script>
+</body>
+</html>

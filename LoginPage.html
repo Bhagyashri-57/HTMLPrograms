@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome Login</title>
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #dcedc8, #b2dfdb);
+    text-align: center;
+    padding: 70px 15px;
+}
+.box {
+    background: white;
+    max-width: 320px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+input, button {
+    display: block;
+    width: 90%;
+    padding: 12px;
+    margin: 12px auto;
+    box-sizing: border-box;
+}
+button {
+    background: #00897b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>Welcome Back 🌿</h1>
+<p>Enter your details</p>
+<form onsubmit="login(event)">
+<input id="username" placeholder="Username" required>
+<input id="password" type="password" placeholder="Password" required>
+<button type="submit">Login</button>
+</form>
+<p id="result"></p>
+</div>
+<script>
+function login(event) {
+    event.preventDefault();
+    document.getElementById("result").textContent =
+        "Demo submitted! Add a secure backend for real login.";
+}
+</script>
+</body>
+</html>

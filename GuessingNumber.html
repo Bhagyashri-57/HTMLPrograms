@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guess the Number</title>
+<style>
+body {
+    background: #ede7f6;
+    text-align: center;
+    font-family: Arial;
+    padding-top: 80px;
+}
+button {
+    padding: 12px;
+    background: #673ab7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>🎯 Number Challenge</h1>
+<p>Guess between 1 and 20</p>
+<input type="number" id="guess" min="1" max="20">
+<button onclick="check()">Check</button>
+<h2 id="result"></h2>
+<script>
+let secret = Math.floor(Math.random() * 20) + 1;
+
+function check() {
+    let n = Number(document.getElementById("guess").value);
+    let result = document.getElementById("result");
+
+    if (!n || n < 1 || n > 20) {
+        result.textContent = "Enter a number from 1 to 20.";
+    } else if (n === secret) {
+        result.textContent = "🎉 Correct! You won!";
+    } else if (n < secret) {
+        result.textContent = "Try a higher number!";
+    } else {
+        result.textContent = "Try a lower number!";
+    }
+}
+</script>
+</body>
+</html>
