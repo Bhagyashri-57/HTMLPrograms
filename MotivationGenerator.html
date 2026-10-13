@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Motivation</title>
+    <style>
+        body {
+            text-align: center;
+            background: #e0fff4;
+            font-family: Arial;
+            padding: 80px 15px;
+        }
+        button {
+            padding: 12px 20px;
+            background: #159d76;
+            color: white;
+            border: none;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>✨ Daily Motivation ✨</h1>
+    <h2 id="quote">Ready for some positivity?</h2>
+
+    <button onclick="newQuote()">Inspire Me</button>
+
+    <script>
+        const quotes = [
+            "Believe in yourself! 🌟",
+            "Never stop learning! 📚",
+            "Small steps lead to big results! 🚀",
+            "Your future starts today! 💚",
+            "Every expert was once a beginner! 💡"
+        ];
+
+        function newQuote() {
+            let i = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[i];
+        }
+    </script>
+</body>
+</html>
