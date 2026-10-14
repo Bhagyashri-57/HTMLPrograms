@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Magic</title>
+<style>
+body {
+    text-align: center;
+    padding-top: 100px;
+    font-family: Arial;
+    transition: 0.5s;
+}
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: purple;
+    color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1> Color Magic</h1>
+<p>Click to change the background!</p>
+<button onclick="changeColor()">Change Color</button>
+<script>
+function changeColor() {
+    document.body.style.background =
+        "#" + Math.floor(Math.random()*16777215)
+        .toString(16).padStart(6,"0");
+}
+</script>
+</body>
+</html>

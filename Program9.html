@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typing Effect</title>
+<style>
+body {
+    background: white;
+    text-align: center;
+    padding-top: 100px;
+    font-family: Arial;
+    color:Black;
+}
+</style>
+</head>
+<body>
+<h1 id="text"></h1>
+<script>
+let message = "Hello, Future Developer! ";
+let i = 0;
+function type() {
+    if (i < message.length) {
+        document.getElementById("text").textContent += message[i];
+        i++;
+        setTimeout(type, 100);
+    }
+}
+type();
+</script>
+</body>
+</html>
