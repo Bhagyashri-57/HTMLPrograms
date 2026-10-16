@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mood Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #fff0f6;
+            padding: 70px 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #fbcfe8;
+        }
+
+        button {
+            font-size: 35px;
+            margin: 8px;
+            border: none;
+            background: #fce7f3;
+            border-radius: 15px;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #f9a8d4;
+            transform: scale(1.1);
+        }
+
+        #message {
+            color: #be185d;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>How are you feeling? 💗</h1>
+        <p>Select your mood today!</p>
+
+        <button onclick="showMood('Happy')">😊</button>
+        <button onclick="showMood('Sad')">😔</button>
+        <button onclick="showMood('Excited')">🤩</button>
+        <button onclick="showMood('Tired')">😴</button>
+
+        <p id="message">Your mood will appear here.</p>
+    </div>
+
+    <script>
+        function showMood(mood) {
+            const messages = {
+                Happy: "Keep smiling! Spread your happiness 🌸",
+                Sad: "Take a breath. Better days will come 💗",
+                Excited: "Amazing! Use your energy to do something great ✨",
+                Tired: "Take some rest. You deserve it 🌷"
+            };
+
+            document.getElementById("message").textContent =
+                mood + ": " + messages[mood];
+        }
+    </script>
+</body>
+</html>

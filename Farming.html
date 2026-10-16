@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Farming 🌱</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f9ef;
+    color: #243b2a;
+}
+
+nav {
+    background: #ffffff;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px #dce9d5;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #258342;
+}
+
+nav a {
+    text-decoration: none;
+    color: #365b3d;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    margin: 30px auto;
+    width: 90%;
+    padding: 50px 35px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #d8f5c8, #f5ffe9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #216c32;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 13px 25px;
+    background: #258342;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero button:hover {
+    background: #17652e;
+}
+
+.hero-emoji {
+    font-size: 110px;
+}
+
+.section {
+    width: 90%;
+    margin: 35px auto;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #246c35;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px #dfeadb;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .emoji {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #28753a;
+}
+
+.card p {
+    line-height: 1.7;
+    color: #536658;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7d6b0;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.action-button {
+    background: #258342;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 12px;
+    background: #edfae8;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #e1f1d9;
+    margin-top: 40px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-emoji {
+        font-size: 75px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🌱 SmartFarm</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#crops">Crops</a>
+        <a href="#market">Market</a>
+        <a href="#tips">Tips</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Grow Smart, Farm Better! 🌾</h1>
+        <p>
+            Welcome to SmartFarm — your digital farming companion.
+            Explore crop guidance, market prices and water-saving tips
+            to support better farming decisions.
+        </p>
+        <button onclick="showWelcome()">
+            Explore Farming
+        </button>
+        <p id="welcome"></p>
+    </div>
+
+    <div class="hero-emoji">👩‍🌾🌾</div>
+</section>
+
+<section class="section">
+    <h2>🌤️ Farm Dashboard</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">🌦️</div>
+            <h3>Weather</h3>
+            <p>Check local weather before irrigation or spraying.</p>
+            <p id="weather">Weather data not connected.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💧</div>
+            <h3>Water Management</h3>
+            <p>Use drip irrigation to reduce water waste.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌱</div>
+            <h3>Crop Health</h3>
+            <p>Inspect leaves regularly for spots, pests and wilting.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💰</div>
+            <h3>Market Awareness</h3>
+            <p>Compare prices before deciding where to sell.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="crops">
+    <h2>🌾 Find Crop Growing Tips</h2>
+
+    <div class="card">
+        <p>Select a crop to see general farming guidance.</p>
+
+        <select id="crop">
+            <option value="">-- Select your crop --</option>
+            <option value="rice">Rice</option>
+            <option value="wheat">Wheat</option>
+            <option value="tomato">Tomato</option>
+            <option value="cotton">Cotton</option>
+            <option value="groundnut">Groundnut</option>
+        </select>
+
+        <button class="action-button" onclick="getCropTips()">
+            Get Crop Tips
+        </button>
+
+        <div class="result" id="cropResult">
+            Your crop guidance will appear here.
+        </div>
+    </div>
+</section>
+
+<section class="section" id="market">
+    <h2>🛒 Example Crop Market Prices</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">🍅</div>
+            <h3>Tomato</h3>
+            <p>Example price: ₹20/kg</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌾</div>
+            <h3>Rice</h3>
+            <p>Example price: ₹35/kg</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🥜</div>
+            <h3>Groundnut</h3>
+            <p>Example price: ₹60/kg</p>
+        </div>
+    </div>
+
+    <p style="margin-top:15px">
+        Note: These are sample values for demonstration, not live
+        market prices. Actual prices vary by location, quality and date.
+    </p>
+</section>
+
+<section class="section" id="tips">
+    <h2>💡 Smart Farming Tips</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">💧</div>
+            <h3>Save Water</h3>
+            <p>Consider drip irrigation and check soil moisture before watering.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🐛</div>
+            <h3>Prevent Pests</h3>
+            <p>Inspect crops regularly and seek expert advice for unusual symptoms.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌿</div>
+            <h3>Healthy Soil</h3>
+            <p>Use soil testing to guide fertilizer and nutrient management.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3>🌱 SmartFarm</h3>
+    <p>Technology for a greener farming future.</p>
+    <p>Made with 💚 for farmers</p>
+</footer>
+
+<script>
+function showWelcome() {
+    document.getElementById("welcome").textContent =
+        "Welcome! Explore the crop tips and farming resources below. 🌱";
+}
+
+function getCropTips() {
+    const crop = document.getElementById("crop").value;
+    const result = document.getElementById("cropResult");
+
+    const tips = {
+        rice: "Rice: Maintain suitable water levels, use healthy seedlings and monitor pests.",
+        wheat: "Wheat: Choose a suitable local variety and manage irrigation according to crop stage.",
+        tomato: "Tomato: Use well-drained soil, support plants and monitor for pests and leaf diseases.",
+        cotton: "Cotton: Scout regularly for bollworms and other pests; follow local integrated pest management advice.",
+        groundnut: "Groundnut: Use well-drained soil and monitor moisture, weeds and leaf diseases."
+    };
+
+    if (crop === "") {
+        result.textContent = "Please select a crop first.";
+        return;
+    }
+
+    result.textContent = tips[crop];
+}
+</script>
+
+</body>
+</html>
